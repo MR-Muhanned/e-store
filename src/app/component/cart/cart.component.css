@@ -1,0 +1,13 @@
+*{
+       margin-top: 141px;
+}
+
+
+img{
+       margin-top: 0;
+}
+.delet {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+     }

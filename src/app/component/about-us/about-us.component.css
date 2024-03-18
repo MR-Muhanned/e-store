@@ -1,0 +1,56 @@
+/* about-us.component.css */
+*{
+  margin-top: 40px;
+}
+/* about-us.component.css */
+
+.about-us {
+  text-align: center;
+  padding: 20px;
+
+  border-radius: 8px;
+  
+}
+
+.about-us h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #f3eeee; /* Darken the font color */
+}
+
+.about-us img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 8px; /* Add a border radius to the image */
+}
+
+.about-us p {
+  font-size: 24px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  color: #f962d6;
+   /* Slightly darken the font color */
+}
+
+
+.about-us ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-us li {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #fc03c2;
+}
+
+.about-us i {
+  margin-right: 5px; /* Add spacing between icons and text */
+  font-size: 18px; /* Adjust icon size */
+  color: #007bff; /* Set icon color */
+}
+
+
+/* Add animations or additional styles as needed */

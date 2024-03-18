@@ -1,0 +1,16 @@
+/* image-slider.component.css */
+
+div {
+       text-align: center; /* لتوسيط الصورة */
+     }
+     
+     img {
+       width: calc(100% - 60px); /* جعل الصورة تأخذ عرضًا أقل من الكامل بـ 30 بكسل لكل طرف */
+       max-height: 500px; /* تحديد الحد الأقصى لارتفاع الصورة */
+       border: 1px solid #ddd; /* إضافة حدود للصورة */
+       border-radius: 5px; /* إضافة زوايا مستديرة */
+       margin: 60px auto; /* توسيط الصورة داخل الحاوية وتحديد المسافة العليا والسفلية بـ 200 بكسل */
+     }
+     div{
+      margin: 0px;
+     }

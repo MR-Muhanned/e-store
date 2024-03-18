@@ -1,0 +1,84 @@
+<ng-container  *ngIf=" products.length !=0" >
+  <div class="container" style="background-color: rgb(165, 103, 28);">
+      <div class="card-table" >
+          <div class="cart-product">
+              <table class="table table-striped-columns" >
+                  <thead>
+                      <tr>
+                          <th>id</th>
+                          <th>Product Name</th>
+                          <th>Product Image</th>
+                          <th>Description</th>
+                          <th>Price</th>
+                          <th>Quantity</th>
+                          <th>Total</th>
+                          <th>Action</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let item of products; let i = index"  >
+                          <td style=" color: #ff0000;">{{ i+1}}</td>
+                          <td>{{item.title}}</td>
+                          <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>
+                          <td style="width: 25%;">{{item.description | slice:0:55 }} {{ item.length > 55 ? '...' : '' }}</td>
+                          <th style="width: 12%;">{{item.price}}</th>
+                          <td style="width: 12%;">{{item.quantity}}</td>
+                          <td style="width: 12%;">{{item.total}}</td>
+                          <td>
+                              <a class="delet"(click)="removeItem(item)" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td colspan="4"></td>
+                          <td><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td>
+                          <td><button routerLink="/products" class="btn btn-primary">Shop More</button></td>
+                          <td> <button type="button" class="btn btn-success" (click)="openModal(template)">Checkout</button> 
+                            <ng-template #template>
+                              <div class="modal-header">
+                                <h4 class="modal-title pull-left">Visa</h4>
+                                <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+                                  <span aria-hidden="true" class="visually-hidden">&times;</span>
+                                </button>
+                              </div>
+                              
+                              <div class="modal-body">
+                                <app-visa></app-visa>
+                              </div>
+                            </ng-template>
+                          </td>
+                          
+
+
+
+
+
+
+
+                          <td><strong>Grand Total : ${{grandTotal}}</strong></td>
+
+
+
+
+
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</ng-container>
+
+
+<ng-container *ngIf="products.length ==0">
+  <div class="container">
+      <div class="card" style="background-color: rgb(216, 211, 204);">
+          <h5 class="card-title">My Cart</h5>
+      </div>
+      <div class="center">
+          <img src="\assets\Untitled-1.png" alt="">
+          <h4>Your cart is empty!</h4>
+          <h6>Add item to it now</h6>
+          <button routerLink="/products" class="btn btn-primary">Shop Now</button>
+      </div>
+  </div>
+</ng-container>

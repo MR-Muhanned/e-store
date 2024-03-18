@@ -1,0 +1,52 @@
+.navbar {
+margin: top 0px;;
+}
+*{
+       margin-top: 20px;
+}
+/* في ملف CSS خاص بك أو في نفس ملف الكومبوننت إذا كنت تستخدم Angular Styles */
+.navbar {
+       background-color: #343a40; /* لون خلفية الشريط */
+     }
+     
+     .navbar-nav {
+       margin: 0;
+     }
+     
+     .nav-item {
+       padding: 0 15px; /* تباعد العناصر في الشريط */
+     }
+     
+     .nav-link {
+       color: #ffffff; /* لون النص */
+       font-size: 16px;
+       text-decoration: none;
+       transition: color 0.3s ease-in-out; /* تأثير تدريجي على لون النص */
+     }
+     
+     .nav-link:hover {
+       color: #28a745; /* لون النص عند التحويم */
+     }
+   /* styles.css أو أي ملف آخر تستخدمه لتخصيص التصميم */
+
+/* تحديد لون خلفية شريط التنقل */
+.navbar {
+       background-color: #343a40; /* اختر لونًا يناسب تصميمك */
+     }
+     
+     /* تحديد لون النص في شريط التنقل */
+     .navbar-dark .navbar-nav .nav-link {
+       color: #ffffff; /* لون النص */
+     }
+     
+     /* تحديد لون النص عند التحويل إلى رابط نشط */
+     .navbar-dark .navbar-nav .nav-link.active,
+     .navbar-dark .navbar-nav .nav-link:hover {
+       color: #17a2b8; /* لون النص عند التحويل أو النشاط */
+     }
+     
+     /* تحديد لون الزرار عند فتحه في أجهزة الهاتف المحمولة */
+     .navbar-toggler-icon {
+       background-color: #ffffff; /* لون الأيقونة */
+     }
+       

@@ -1,0 +1,79 @@
+
+
+<div class="search-container">
+  <div class="input-group">
+    <input type="text" [(ngModel)]="searchTitle" (ngModelChange)="search()" class="form-control" placeholder=" search..." />
+    <button (click)="search()" class="btn btn-primary btn-sm">search</button>
+  <!-- </div>
+  <button (click)="addProduct()" class="btn btn-success">إضافة منتج جديد</button>
+</div>  -->
+
+
+<button type="button" class="btn btn-primary" (click)="openModal(template)">Add product</button>
+ 
+
+
+
+<!-- هذا قالب الاضافة -->
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Add Product</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+   <addProduct> </addProduct>
+  </div>
+</ng-template>
+
+<!-- نهاية قالب الاضافة -->
+
+
+  <table class="table-responsive table table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">image</th>
+          <th scope="col">name</th>
+          <th scope="col">price</th>
+          <th scope="col">description</th>
+          <th scope="col">action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.id }}</td>
+          <td><img [src]="product.image" alt="Product Image" class="product-image"></td>
+          <td>{{ product.title| slice:0:55 }} {{ product.title.length > 55 ? '...' : '' }}</td>
+          <td>{{ product.price }}</td>
+          <td>
+            <!-- عرض جزء من الوصف مع نقاط الإلغاء -->
+            {{ product.description | slice:0:55 }}{{ product.description.length > 55 ? '...' : '' }}
+          </td>
+          <td>
+            <!-- أزرار الإجراءات -->
+            <button type="button" class="btn btn-primary" (click)="openModal(template)">Edet </button>
+   
+  
+  
+  
+            <!-- هذا قالب الاضافة -->
+            <ng-template #template>
+              <div class="modal-header">
+                <h4 class="modal-title pull-left">Edit</h4>
+                <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+                  <span aria-hidden="true" class="visually-hidden">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+               <app-update-product></app-update-product>
+              </div>
+            </ng-template>
+            <button class="btn btn-danger" (click)="deleteProduct(product)">Delet</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+<!-- deleteProduct -->

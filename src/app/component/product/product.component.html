@@ -1,0 +1,36 @@
+<!-- product.component.html -->
+
+<div class="search-container">
+  <input type="text" [(ngModel)]="searchTitle" (ngModelChange)="search()" placeholder="ابحث عن العنوان..." />
+  <button (click)="search()">ابحث</button>
+</div>
+
+<h1 class="page-title" style="margin: 40px; margin-top: 10px;">The Product</h1>
+
+<div *ngIf="products" class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col" *ngFor="let product of products"  >
+    <div class="card h-100 product-card">
+
+      
+      <img [lazyLoad]="product.image" class="card-img-top" alt="Product Image" [routerLink]="['/product-detels', product.id]">
+
+      <div class="card-body">
+        <h5 class="card-title product-name">{{ product.title }}</h5>
+        <!-- <p class="card-text product-description">{{ product.description }}</p> -->
+
+
+        <p class="card-text product-price">Price: {{ product.price | currency:'USD':'symbol':'1.2-2' }} 
+        </p>
+      
+    <div *ngFor="let review of reviews">
+      {{ review.Rating | starRating }} 
+    </div>
+
+        <button (click)="addToCart(product)">Add to Cart</button>
+        
+        <!-- Add more details as needed -->
+
+      </div>
+    </div>
+  </div>
+</div>

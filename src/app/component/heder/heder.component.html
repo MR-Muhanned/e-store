@@ -1,0 +1,66 @@
+<header>
+    <input type="checkbox" name="" id="chk1"> 
+    <div class="logo">
+        <div class="logo">
+            <a routerLink="home">
+                <img src="assets/logo/1.png" alt="Web Master Logo">
+            </a>
+        </div>
+    </div>
+    <div class="search-box">
+        <!-- <form (submit)="onSubmit()">
+          <input type="text" name="search" id="srch" [(ngModel)]="searchTerm" placeholder="Search">
+          <button type="submit" aria-label="Search">
+            <i class="fa fa-search"></i>
+          </button>
+
+          
+        </form> -->
+        <!-- <form (ngSubmit)="getProductsBySearchTerm(searchTerm)" #searchForm="ngForm">
+            <input type="text" name="search" id="srch" [(ngModel)]="searchTerm" placeholder="Search" ngModel>
+            <button type="submit" aria-label="Search">
+              <i class="fa fa-search"></i>
+            </button>
+        </form>  -->
+         
+          
+      </div> 
+    <ul>
+        <li><a routerLink="home" routerLinkActive="active">Home</a></li>
+        <li><a routerLink="about" routerLinkActive="active">About Us</a></li>
+
+
+        <li style="position: relative;">
+          <p style="font-size: 20px; color: #ef1414; margin-bottom: 0; margin: 0px; position: absolute; right: 0; top: -20px;">{{ totalItem }}</p>
+          <a style="margin-left: 0;" routerLink="cart" routerLinkActive="active">
+              <i class="fa fa-shopping-cart"></i> Cart
+          </a>
+      </li>
+      
+      
+      
+         
+        
+        
+        <li><a routerLink="admin_product" routerLinkActive="active">Admin_product</a></li>
+        
+        <li>
+          <a routerLink="logIn" routerLinkActive="active">
+              Log In
+              <i class="bi bi-box-arrow-in-right"></i>
+          </a>
+      </li>
+        
+        <li>
+            <a routerLink="#"><i class="fa fa-facebook"></i></a>
+            <a routerLink="#"><i class="fa fa-twitter"></i></a>
+            <a routerLink="#"><i class="fa fa-instagram"></i></a>
+        </li>
+    </ul>
+    <div class="menu">
+        <label for="chk1">
+            <i class="fa fa-bars"></i>
+          
+        </label>
+    </div>
+</header>

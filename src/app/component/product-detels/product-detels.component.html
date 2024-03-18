@@ -1,0 +1,46 @@
+<div class="container" style="padding: 10%;">
+  <div class="product-details-container dd">
+    
+    <img  [src]="productDetails?.image" class="product" alt="Product Image">
+    <div class="product-details" style="padding: 50px;">
+      <h1 class="product-title">{{ productDetails?.title }}</h1>
+      <p class="product-description">{{ productDetails?.description }}</p>
+      <p class="product-price">Price: {{ productDetails?.price }} $</p>
+
+      <div style="margin-left: 0; display: flex; align-items: center; margin-top: 0;">
+        <rating [max]="10" [(ngModel)]="y" [customTemplate]="tt" style="font-size: 24px;"></rating>
+        <ng-template #tt let-i="index" let-v="value">
+          <button class="btn btn-{{i < v ? 'btn-warning' : 'btn-default'}}" style="font-size: 20px; background-color: #333; color: white;">
+            {{i < v ? '&#9733;' : '&#9734;'}}
+          </button>
+        </ng-template>
+      </div>
+
+      <div class="product-images">
+        <!-- Additional Images -->
+        <img  [src]="productDetails?.img1" class="product-image" alt="">
+        <img [src]="productDetails?.img2" class="product-image" alt="">
+        <img [src]="productDetails?.img3" class="product-image" alt="">
+        <img [src]="productDetails?.img4" class="product-image" alt="">
+      </div>
+
+      <div class="carddd">
+        <button style="margin: 0; padding: 10px;" (click)="addToCart(productDetails)">Add to Cart</button>
+        <button style="margin: 0; padding: 10px; margin-left: 15px;" type="button" class="btn btn-primary" (click)="openModal(template)">Buy Now</button>
+
+        <ng-template #template>
+          <div class="modal-header">
+            <h4 class="modal-title pull-left">Visa</h4>
+            <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+              <span aria-hidden="true" class="visually-hidden">&times;</span>
+            </button>
+          </div>
+          
+          <div class="modal-body">
+            <app-visa></app-visa>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

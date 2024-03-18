@@ -1,0 +1,72 @@
+*{
+       margin-top: 60px;
+}
+.product-details-container {
+       display: flex;
+       align-items: flex-start;
+     }
+     
+     .product {
+      width: 50%;
+      height: 500px; /* يمكنك تعديل هذه القيمة وفقًا لاحتياجاتك */
+      object-fit: scale-down;
+      object-position: 0 0; /* يحدد موقع الصورة بالنسبة للعنصر الأصلي (الزاوية اليسرى العلوية) */
+    }
+    
+     
+     .product-details {
+       color: #336699; /* تغيير لون الخط */
+     }
+     
+     .product-title {
+       font-size: 24px; /* تكبير حجم العنوان */
+       margin-bottom: 10px; /* تفريق بين العنوان والوصف */
+     }
+     
+     .product-price {
+       font-weight: bold; /* جعل السعر بدون عرف غامق */
+     }
+     .dd{
+      border: #336699 solid;
+      border-radius: 5%;
+     }
+
+
+
+    
+    .card-item {
+      display: inline-block;
+      margin-right: 10px; /* يمكنك ضبط المسافة بين العناصر حسب الحاجة */
+    }
+    
+    button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+     
+    }
+    
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .product-image {
+      width: 75px;
+      height: 75px;
+      margin: 0;
+      padding: 0;
+      vertical-align: bottom;
+      display: inline-block;
+      transition: transform 0.3s; /* إضافة تأثير انتقال لتحقيق تأثير سلس */
+    
+      /* أضف تأثير تكبير عند التحويل إلى حالة hover */
+    }
+    
+    .product-image:hover {
+      transform: scale(1.4); /* يمكنك تغيير 1.4 إلى النسبة التي تريدها */
+    }
+    
+    
